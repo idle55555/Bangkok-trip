@@ -32,6 +32,10 @@ small{color:#41536b}
 </div>
 <script>
 /* 資料區：標「估」的時段、交通分鐘、預算為估計值，可直接修改。w=步行 */
+const CT={t:"市集內店家",r:1,f:'市集官方地圖：<a href="https://www.chatuchakmarket.org/?p=1214" target="_blank">chatuchakmarket.org</a>・Google 地圖在市集內的標記可能不準，請以 Section／Soi 路牌為準',l:[["345 by Yorwor 餐廳","Section 3・Soi 45","345 by Yorwor Chatuchak Weekend Market Bangkok"],["Chin Pun Sod 豬肉丸（無添加澱粉）","Section 5","Chin Pun Sod Chatuchak Weekend Market Bangkok"],["Coco JJ 椰子冰","Section 12","Coco JJ Chatuchak Weekend Market Bangkok"],["鬍子爺爺手沖泰奶","Section 4・Soi 50/1・No. 190","Chatuchak Weekend Market Section 4 Soi 50/1 hand drip Thai tea Bangkok"],["Enchante' Juice Station 芒果糯米飯","Section 25・Soi 3/7","Enchante Juice Station Chatuchak Weekend Market Bangkok"],["moribrand 包袋（Section 3）","Section 3・Soi 44/2・Room 184","moribrand Chatuchak Weekend Market Section 3 Bangkok"],["moribrand 包袋（Section 23）","Section 23・Soi 32/4・Room 091","moribrand Chatuchak Weekend Market Section 23 Bangkok"]]};
+const SW1={t:"咖啡店（串成步行路線）",r:1,f:"街頭壁畫與招牌在 Google 地圖上的標記可能不準，請以現場為準；串成路線後可在 Google 地圖調整順序",l:[["adidas × % Arabica","每日 9:00–19:30","adidas × % Arabica Song Wat Rd Bangkok"],["LOST in Songwat","週二 10:00–18:00","LOST in Songwat 973 Song Wat Rd Bangkok"]]};
+const SW2={t:"5 個打卡點",r:1,f:"街頭壁畫與招牌在 Google 地圖上的標記可能不準，請以現場為準；串成路線後可在 Google 地圖調整順序",l:[["必拍1「I WANNA BANGKOK」招牌","","I WANNA BANGKOK sign Song Wat Road Bangkok"],["必拍2 MAHAPHO RIVERVIEW 海報牆","","Mahapho Riverview Song Wat Bangkok"],["必拍3 兩隻特技表演大象壁畫","比利時藝術家 ROA 作品","ROA elephants mural Song Wat Bangkok"],["必拍4 MADE IN SONG WAT 打卡牆","","Made in Song Wat Song Wat Road Bangkok"],["必拍5 昭披耶河景","松瓦倉庫巷走到底","Song Wat warehouse alley Chao Phraya river view Bangkok"]]};
+const CU={t:"朱拉隆功店家與甜點",r:1,f:"Jeh O Chula、Nueng Nom Nua 用 QueQ 取號（需人或手機在一定範圍內才能送出）；店家位置請以 Google 地圖與現場為準",l:[["陳瑞興鴨肉麵（必比登）","10:30–19:30","649 Banthat Thong Rd Wang Mai Pathum Wan Bangkok 10330"],["Jeh O Chula 媽媽麵（必比登）","QueQ 取號","Jeh O Chula 113 Charat Mueang Alley Bangkok"],["Louis vanich 蒜香牛肉","","Louis Vanich 1642 Banthat Thong Rd Bangkok"],["Everyday Thai Tea 總店","Soi Chulalongkorn 12","Everyday Thai Tea 13 Soi Chulalongkorn 12 Bangkok"],["Nueng Nom Nua 牛奶小子炭烤吐司","QueQ 取號","Nueng Nom Nua Chulalongkorn Bangkok"],["HAAB 炭火奶油雞蛋糕","Banthat Thong Rd 995–997","HAAB Banthat Thong Road 995-997 Bangkok"]]};
 const H="Jasmine Resort Hotel Bangkok BTS Phra Khanong",TX="Taoyuan Airport Terminal 2",
 FL=[["去程","JX741","星宇航空","桃園 TPE T2","09:50","曼谷 BKK 素萬那普","12:55","約 4 小時 05 分","12/19"],["回程","JX746","星宇航空","曼谷 BKK 素萬那普","17:40","桃園 TPE T2","22:30","約 3 小時 50 分","12/23"]],
 D=[{d:"12/19",w:"六",t:"曼谷我們來了",wx:[32,23,10],o:"輕薄透氣衣物，機上帶薄外套",r:"以 Grab 或 MuvMi 代步；按摩與美甲皆室內，行程不變。",s:[
@@ -44,7 +48,7 @@ D=[{d:"12/19",w:"六",t:"曼谷我們來了",wx:[32,23,10],o:"輕薄透氣衣物
 {d:"12/20",w:"日",t:"女王們購物日",wx:[32,23,10],o:"好走的鞋、防曬；商場冷氣強可帶薄外套",r:"恰圖恰縮短，提早到 Central World 或 JJ Mall 室內逛。",s:[
 ["h","07:30","飯店早餐","Jasmine Resort Hotel",H,"","",0],
 ["s","09:00","恰圖恰假日市集","六日 9:00–18:00・停留約 3 小時(估)・MRT BL12 甘烹碧站 2 號出口／BTS N8 蒙奇站 1 號出口","Chatuchak Weekend Market Bangkok","必去","BTS E8→N8 Mo Chit・約 35 分(估)",0],
-["f","12:00","午餐：恰圖恰內","345 by Yorwor(3 區 45 巷)、Chin Pun Sod 豬肉丸(5 區)、Coco JJ 椰子冰(12 區)、鬍子爺爺泰奶(4 區 No.190)、芒果糯米飯(25 區 Soi 3/7)・預算約 200–400฿(估)・免訂位","345 by Yorwor Chatuchak Bangkok","","市集內步行",1],
+["f","12:00","午餐：恰圖恰內","345 by Yorwor(3 區 45 巷)、Chin Pun Sod 豬肉丸(5 區)、Coco JJ 椰子冰(12 區)、鬍子爺爺泰奶(4 區 No.190)、芒果糯米飯(25 區 Soi 3/7)・預算約 200–400฿(估)・免訂位","345 by Yorwor Chatuchak Bangkok","","市集內步行",1,CT],
 ["m","14:30","按摩 One More Thai／Let's Relax","One More Thai 10:00–23:00；Let's Relax 10:00–00:00（Central World 2 樓）・BTS E1 奇隆站 3 號出口步行 1 分","One More Thai Massage Phloen Chit Bangkok","","BTS N8→E1 Chit Lom・約 25 分(估)",0],
 ["b","16:00","Central World 百貨","1F 手工皂 PHUTAWAN、good goods、Butterfly Thai Perfume、Smell Lemongrass／4F MUJI 東南亞最大旗艦店／5F SEEK'N Keep CLUB","CentralWorld Bangkok","必去","步行",1],
 ["f","18:30","晚餐 Somtam Nua","Central World 3F・預算約 300–500฿(估)・假日晚餐建議提早到","Somtam Nua CentralWorld Bangkok","","同棟移動",1],
@@ -62,12 +66,12 @@ D=[{d:"12/19",w:"六",t:"曼谷我們來了",wx:[32,23,10],o:"輕薄透氣衣物
 ["m","20:45","按摩 Thai Garden Massage","10:00–00:00・ICONSIAM M 樓經聯通道過對面，緊鄰 ICS・當天最後一站","Thai Garden Massage Charoen Nakhon Bangkok","","步行約 10 分",1]]},
 {d:"12/22",w:"二",t:"文青復古老街＋米其林美食",wx:[32,23,10],o:"好走的鞋、帽子；老街多走路",r:"嵩越路縮短，改逛唐人街室內店家、暹羅商圈。",s:[
 ["h","07:30","飯店早餐","Jasmine Resort Hotel",H,"","",0],
-["s","09:30","嵩越路 Song Wat Road","adidas×% Arabica 9:00–19:30、LOST in Songwat 週二 10:00–18:00・BTS 轉 MRT BL29 Wat Mangkon（3 號出口）步行約 8 分，或搭船到 Ratchawong 碼頭步行 1–2 分","Song Wat Road Bangkok","必去","BTS＋MRT 約 60 分(估)",0],
+["s","09:30","嵩越路 Song Wat Road","adidas×% Arabica 9:00–19:30、LOST in Songwat 週二 10:00–18:00・BTS 轉 MRT BL29 Wat Mangkon（3 號出口）步行約 8 分，或搭船到 Ratchawong 碼頭步行 1–2 分","Song Wat Road Bangkok","必去","BTS＋MRT 約 60 分(估)",0,SW1],
 ["f","11:00","午餐 Urai 滷鵝（必比登）","官方公布 10:00–13:00・只收現金・常提早賣完，請開門即到・備案牛面王 10:00–20:00・預算約 300฿(估)","Urai Braised Goose Song Wat Bangkok","","步行約 5 分",1],
-["s","12:00","5 個打卡點","I WANNA BANGKOK、MAHAPHO 海報牆、ROA 大象壁畫、MADE IN SONG WAT 牆、松瓦倉庫巷河景","Song Wat Road Bangkok","","步行",1],
+["s","12:00","5 個打卡點","I WANNA BANGKOK、MAHAPHO 海報牆、ROA 大象壁畫、MADE IN SONG WAT 牆、松瓦倉庫巷河景","Song Wat Road Bangkok","","步行",1,SW2],
 ["b","13:30","唐人街 源順號","週一至六 7:30–17:00・胡椒粉、迷你調味料鑰匙圈","Nguan Soon Bangkok","","步行約 15 分(估)",1],
 ["h","17:15","QueQ 取號提醒","抵達朱拉隆功周邊後，先用 QueQ App 為 Jeh O Chula、Nueng Nom Nua 取號排隊（需人或手機在一定範圍內才能送出）","National Stadium BTS Bangkok","","BTS／MRT 至 W1 National Stadium，步行約 10 分",0],
-["f","17:30","朱拉隆功美食夜市","陳瑞興鴨肉麵 10:30–19:30；Jeh O Chula 媽媽麵(QueQ 取號)、Louis vanich、Everyday Thai Tea、Nueng Nom Nua(QueQ 取號)、HAAB・預算約 300–500฿(估)","Banthat Thong Road Bangkok","","",0],
+["f","17:30","朱拉隆功美食夜市","陳瑞興鴨肉麵 10:30–19:30；Jeh O Chula 媽媽麵(QueQ 取號)、Louis vanich、Everyday Thai Tea、Nueng Nom Nua(QueQ 取號)、HAAB・預算約 300–500฿(估)","Banthat Thong Road Bangkok","","",0,CU],
 ["m","19:30","按摩 Lek Massage","9:30–00:00・BTS CEN 暹羅站步行 5 分・備案：暹羅廣場、Sanctuary Bangkok 高空酒吧 17:00–01:00","Lek Massage Rama 1 Road Bangkok","","BTS W1→CEN 步行約 16 分(或搭 BTS 1 站)",1]]},
 {d:"12/23",w:"三",t:"隨心隨性的終極巡禮",wx:[32,23,10],o:"輕便衣物，行李先整理好",r:"皆為室內行程，不變。",s:[
 ["h","07:30","早餐與寄放行李","退房 12:00・早餐後先請櫃台寄放行李",H,"","",0],
@@ -79,8 +83,8 @@ D=[{d:"12/19",w:"六",t:"曼谷我們來了",wx:[32,23,10],o:"輕薄透氣衣物
 ["h","17:40","JX746 起飛","22:30 抵達桃園 T2","Suvarnabhumi Airport","","",0]]}],
 EM=[["觀光警察","1155"],["泰國警察","191"],["醫療救援","1669"],["外交部旅外緊急專線(出發前請再核對)","+886800085095"]],
 RS=["Savoey 上味泰餐館","Jeh O Chula 媽媽麵","Nueng Nom Nua"],
-TD=["確認護照效期","TDAC電子入境申報(出發前72小時)","準備 eSIM／網路","預訂 BTS 兔子卡"],
-PK=["護照、機票","等值2萬元泰銖","帶 JCB 信用卡","充電器與行動電源","防曬與帽子","薄外套(冷氣)","長褲／過膝裙(寺廟)","好走的鞋"];
+TD=["確認護照效期","TDAC電子入境申報(出發前72小時)","準備 eSIM／網路","預訂 BTS 兔子卡","換少量泰銖"],
+PK=["帶 JCB 信用卡","護照、機票","充電器與行動電源","防曬與帽子","薄外套(冷氣)","長褲／過膝裙(寺廟)","好走的鞋"];
 const G="https://www.google.com/maps/",E=encodeURIComponent,mp=q=>G+"search/?api=1&query="+E(q),
 nv=(o,d,m)=>G+"dir/?api=1&origin="+E(o)+"&destination="+E(d)+"&travelmode="+m,
 TY={s:"景點",f:"美食",b:"購物",m:"按摩休息",h:"機場／飯店"},
@@ -101,6 +105,8 @@ else if(t>END)h="<b>旅程結束，歡迎回家！</b>";
 else{const b=bk(t),dd=Math.min(4,Math.max(0,b.getUTCDate()-19)),hm=pad(b.getUTCHours())+":"+pad(b.getUTCMinutes()),n=D[dd].s.find(x=>x[1]>hm);
 h=`<b style="font-size:20px">旅行第 ${dd+1} 天</b><br>${n?`下一個行程 ${n[1]}｜${n[2]}`:"今日行程已結束，好好休息"}`}
 $("cd").innerHTML=h}
+const rt=l=>{const q=l.map(v=>v[2]);return G+"dir/?api=1&origin="+E(q[0])+"&destination="+E(q[q.length-1])+(q.length>2?"&waypoints="+E(q.slice(1,-1).join("|")):"")+"&travelmode=walking"},
+CTR=x=>{const c=x[8];return c?`<div style="margin-top:8px"><b>${c.t}</b>${c.l.map(v=>`<div class="row" style="border-top:1px dashed var(--b);padding-top:4px"><span>${v[0]}${v[1]?`<br><small>${v[1]}</small>`:""}</span><a class="bt" style="min-height:36px" target="_blank" href="${mp(v[2])}">地圖</a></div>`).join("")}${c.r?`<div style="margin:6px 0"><a class="bt" target="_blank" href="${rt(c.l)}">全部串成步行路線</a></div>`:""}<small>${c.f}</small></div>`:""};
 function ov(){$("t0").innerHTML=FL.map(f=>`<div class="c"><b style="color:var(--b)">${f[0]}・${f[2]} ${f[1]}</b> <span class="tg">${f[8]}</span>
 <div style="display:flex;justify-content:space-between;font-size:20px;font-weight:700;margin:6px 0"><span>${f[4]}</span><span>→</span><span>${f[6]}</span></div>
 <div style="display:flex;justify-content:space-between"><span>${f[3]}</span><span style="text-align:right">${f[5]}</span></div>
@@ -111,8 +117,8 @@ function dyR(){const d=D[day];$("t1").innerHTML=`<div class="dy">${D.map((x,i)=>
 <div class="row"><button class="${rain?"":"on"}" onclick="rain=0;dyR()">晴天行程</button><button class="${rain?"on":""}" onclick="rain=1;dyR()">雨天方案</button></div>
 <h2>${d.d} ${d.t}</h2>${rain?`<div class="c bd"><b>雨天替代（建議草稿）</b><br>${d.r}</div>`:""}
 ${d.s.map((x,k)=>{const L=k&&x[6]?`<div class="lg">${x[7]?"🚶":"🚇"} ${x[6]}<br><a class="bt" style="min-height:36px;margin-top:4px" target="_blank" href="${nv(d.s[k-1][4],x[4],x[7]?"walking":"transit")}">${x[7]?"步行導航":"路線導航"}</a></div>`:"";
-return L+`<div class="c k ${x[0]}" style="--i:${k}"><b>${x[1]}(估)</b> ${x[2]} <span class="tg e">${TY[x[0]]}</span>${x[5]?`<span class="tg r">${x[5]}</span>`:""}<br><small>${x[3]}${x[0]=="b"?"・可退稅：認 Tax Refund 標示":""}</small>
-<div style="margin-top:6px;text-align:right"><a class="bt" href="${mp(x[4])}" target="_blank">地圖</a></div></div>`}).join("")}
+return L+`<div class="c k ${x[0]}" style="--i:${k}"><b>${x[1]}(估)</b> ${x[2]} <span class="tg e">${TY[x[0]]}</span>${x[5]?`<span class="tg r">${x[5]}</span>`:""}<br><small>${x[3]}${x[0]=="b"?"・可退稅：認 Tax Refund 標示":""}</small>${CTR(x)}
+${x[8]?"":`<div style="margin-top:6px;text-align:right"><a class="bt" href="${mp(x[4])}" target="_blank">地圖</a></div>`}</div>`}).join("")}
 <div class="c"><b>今日花費</b><div class="row"><span>匯率 1 泰銖 =</span><input type="number" step="0.01" value="${S.rate}" onchange="S.rate=+this.value||1;sv();dyR()" style="width:90px"><span>新台幣</span></div>
 ${S.ex[day].map((e,i)=>`<div class="row"><span>${e[0]} ฿${e[1]}（NT$${(e[1]*S.rate).toFixed(0)}）</span><button onclick="S.ex[${day}].splice(${i},1);sv();dyR()">刪</button></div>`).join("")}
 <div class="row"><input type="text" id="en" placeholder="項目"><input type="number" id="ea" placeholder="泰銖" style="width:90px"><button onclick="addE()">加</button></div>
